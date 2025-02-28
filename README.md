@@ -1,9 +1,11 @@
 
 # Systems analysis unravels a common rural-urban gradient in immunological profile, function and metabolic dependencies
 
+```
 Author      : Mikhael D. Manurung
 Email       : m.d.manurung@lumc.nl
 Affiliation : Leiden University Center for Infectious Diseases (LU-CID)
+```
 
 This repository contains data and analysis scripts to reproduce figures shown in the manuscript.
 
@@ -13,6 +15,18 @@ Folders:
 data/       # processed data for downstream analyses
 outputs/    # models, plots, and tables are saved here
 src/        # analysis scripts are saved here
+```
+
+Note that the following data objects have to be downloaded from Zenodo:
+
+```
+# Zenodo URL: https://zenodo.org/records/14852065
+
+data/met_inhibitions/integrated_allLineages.qs
+data/met_inhibitions/FigS8_B_umap_coordinates.qs
+data/EXV_sce_annotated.qs
+data/PMA_data.qs
+data/MPL_data.qs
 ```
 
 Purpose of scripts in `src/` folder:

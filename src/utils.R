@@ -6,12 +6,18 @@ color_lineages <- purrr::set_names(color_lineages, c("gdT", "UncT", "CD8T", "CD4
 color_groups <- c("#E69F00", "#56B4E9", "#009E73")
 color_groups <- purrr::set_names(color_groups, c("RUR", "URB", "EUR"))
 
-# plotScatter <- function(data, x, y, ...) {
-#     data %>%
-#         ggplot(aes(.data[[x]], .data[[y]], ...)) +
-#         geom_scattermore(alpha = .8) +
-#         coord_cartesian(xlim = c(0, 8), ylim = c(0, 8))
-# }
+
+sce2dt <- function(sce, dr = NULL, slot = "exprs", save_path=NULL) {
+    suppressPackageStartupMessages(require(data.table))
+    stopifnot(dr %in% names(reducedDims(sce)))
+
+    dt <- as.data.table(data.frame(colData(sce),t(assay(sce, slot))))
+    if (!is.null(dr)) dt <- cbind(dt, reducedDim(sce, dr))
+    if (!is.null(save_path)) fwrite(dt, save_path)
+
+    return(dt)
+}
+
 plotDensity <- function(data, x, y, nbin = 128, pt = 1.1, pal=1) {
     pal <- pal
     color <- colorRampPalette(rev(RColorBrewer::brewer.pal(11, "Spectral")))

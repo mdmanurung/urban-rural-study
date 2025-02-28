@@ -2,6 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.vscode/
 
-
-data/
+data/met_inhibitions/integrated_allLineages.qs
+data/met_inhibitions/FigS8_B_umap_coordinates.qs
+data/EXV_sce_annotated.qs
+data/PMA_data.qs
+data/MPL_data.qs
