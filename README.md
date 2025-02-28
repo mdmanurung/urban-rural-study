@@ -32,29 +32,26 @@ data/MPL_data.qs
 Purpose of scripts in `src/` folder:
 
 ```
+###
+## main figures
+#
 Fig1_BC.R
 # script to plot age and sex distribution as well as IgG1 galactosylation
 # outputs: Fig1_B, Fig1_C
 
-
 Fig2_train_mofa.R       
 # script to run MOFA and select final MOFA model
 # outputs: Fig1_B
-
 
 Fig2_principal_curve.R  
 # script to plot MDS and perform principal curve analysis
 # depends on: Fig2_train_mofa.R
 # outputs: Fig1_CD, FigS2_A
 
-
-FigS1_ABC.R
-# script to generate figures for Fig S1A, B, and C
-# outputs: FigS1_A-C
-
-
-FigS4_compare_CAA_rural.R
-# outputs: FigS4 and TableS6
+# the following three scripts are required for Figures 3, 4, 5, and 6
+_EXV_differential_analysis.R
+_PMA_differential_analysis.R
+_MPL_differential_analysis.R
 
 Fig8_B.R
 # outputs: Fig8_B and FigS8_C
@@ -64,6 +61,16 @@ Fig8_C.R
 
 Fig8_D.R
 # outputs: Fig8_D and FigS8_D
+
+###
+## supplementary 
+#
+FigS1_ABC.R
+# script to generate figures for Fig S1A, B, and C
+# outputs: FigS1_A-C
+
+FigS4_compare_CAA_rural.R
+# outputs: FigS4 and TableS6
 
 FigS8_AB_calculate_iMFI.R
 # umap and marker heatmaps of metabolic enzyme inhibition spectral flow data
